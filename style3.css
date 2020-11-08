@@ -1,0 +1,187 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: grey;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+#sidebar {
+    width: 300px;
+    position: fixed;
+    top: 25px;
+    right: -300px;
+    height: 100vh;
+    z-index: 999;
+    background: #343a40;
+    color: #e1ffff;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    opacity:0.8;
+}
+
+#sidebar.active {
+    right: 0;
+}
+
+/*basic setting for ul and li*/
+#sidebar ul {
+    padding: 1px;
+    margin: 0px;
+}
+
+#sidebar li {
+    list-style: none;
+    padding: 5px;
+    margin: 10px;
+    line-height: 35px;
+    cursor: pointer;
+}
+
+/*arrow for dropdown*/
+#sidebar ul :not(collapsed) .arrow:before,
+#sidebar li :not(collapsed) .arrow:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f107";
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+    float: right;
+    font-weight: 900;
+}
+
+/*main list active*/
+#sidebar li:hover {
+    background-color: #4f5b69;
+    transition: all 0.5s ease;
+}
+
+#sidebar ul li.no-hover, #sidebar ul li.no-hover {
+    cursor: default;
+    padding: 10px;
+}
+
+#sidebar ul li.no-hover:hover,
+#sidebar li li.no-hover:hover {
+    background-color: #343a40 !important;
+}
+
+#sidebar li a, #sidebar li {
+  text-decoration: none;
+  color: #e1ffff;
+}
+#sidebar li a i, #sidebar li i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 40px;
+}
+
+#sidebar hr {
+    border-top: 1px solid grey !important;
+    width: 100%;
+}
+
+#sidebar ul .sub-menu li,
+#sidebar li .sub-menu li {
+    line-height: 25px;
+}
+
+/*arrow for sub menu*/
+#sidebar ul .sub-menu li:before,
+#sidebar li .sub-menu li:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f105";
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 10px;
+    vertical-align: middle;
+    font-weight:900;
+}
+
+/*dismiss button*/
+#dismiss {
+    width: 35px;
+    height: 35px;
+    border:none;
+    background: rgba(0,0,0,0);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s ease;
+}
+
+/*main window*/
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+.overlay.active {
+    display: block;
+    opacity: 1;
+    transition: all 1s ease;
+}
+
+/*content style*/
+#content {
+    transition: all 1s;
+    position: absolute;
+}
+
+/*fixed button*/
+#sidebarCollapse {
+    position: fixed;
+    top: 30%;
+    right: 0px; 
+    background-color: rgba(0,0,0,0.3);
+    width: 60px;
+    height: 50px;
+    font-size: 25px;
+    border-radius:10px 0px 0px 10px;
+}
+
+#sidebarCollapse:hover {
+    background-color: rgba(0,0,0,0.6);
+    transition: all 1s ease;
+}
